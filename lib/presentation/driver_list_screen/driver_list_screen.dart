@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:moovebe/core/colors.dart';
 import 'package:moovebe/core/constents.dart';
+import 'package:moovebe/presentation/driver_list_screen/widgets/buttons.dart';
 import 'package:moovebe/presentation/driver_list_screen/widgets/driver_tile.dart';
 
 class DriverListSreen extends StatelessWidget {
@@ -13,11 +14,12 @@ class DriverListSreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 100,
-        title: Center(child: Text('Driver List')),
+        title: const Center(child: Text('Driver List')),
         backgroundColor: Colors.black,
       ),
+      // TODO: disable scroll animation from this list view 👇
       body: ListView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         shrinkWrap: true,
         children: [
           height_10,
@@ -40,26 +42,11 @@ class DriverListSreen extends StatelessWidget {
                   shrinkWrap: true,
                   itemCount: 10,
                   itemBuilder: (BuildContext context, int index) {
-                    return DriverTile();
+                    return const DriverTile();
                   }),
             ),
-            SizedBox(
-              height: 50,
-              width: MediaQuery.of(context).size.width * 0.9,
-              child: ElevatedButton(
-                onPressed: () {},
-                child: Text(
-                  'Add Driver',
-                  style: TextStyle(fontSize: 22, color: Colors.white),
-                ),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: defaultRed,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12), // <-- Radius
-                  ),
-                ),
-              ),
-            ),
+            //TODO: button might go out of screen .. check with defferent aspect ratio 📐
+            const AddButton(),
           ])
         ],
       ),

@@ -9,6 +9,9 @@ var width_5 = const SizedBox(
 var width_2 = const SizedBox(
   width: 2,
 );
+var height_20 = const SizedBox(
+  height: 20,
+);
 var height_10 = const SizedBox(
   height: 10,
 );
