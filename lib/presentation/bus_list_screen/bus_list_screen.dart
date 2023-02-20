@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:moovebe/core/colors.dart';
 import 'package:moovebe/core/constents.dart';
-import 'package:moovebe/presentation/bus_list/widgets/bus_tile.dart';
-import 'package:moovebe/presentation/bus_list/widgets/card_bus_list.dart';
-import 'package:moovebe/presentation/bus_list/widgets/bus_list_appbar.dart';
+import 'package:moovebe/presentation/bus_list_screen/widgets/bus_tile.dart';
+import 'package:moovebe/presentation/bus_list_screen/widgets/card_bus_list.dart';
+import 'package:moovebe/presentation/bus_list_screen/widgets/bus_list_appbar.dart';
 
 class BusListScreen extends StatelessWidget {
   const BusListScreen({super.key});

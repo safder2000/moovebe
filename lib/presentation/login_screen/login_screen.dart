@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:moovebe/presentation/login/widgets/welcome_grahics.dart';
+import 'package:moovebe/presentation/login_screen/widgets/welcome_grahics.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
