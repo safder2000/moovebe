@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:moovebe/presentation/add_driver_screen.dart/add_driver_screen.dart';
 import 'package:moovebe/presentation/bus_list_screen/bus_list_screen.dart';
 import 'package:moovebe/presentation/driver_list_screen/driver_list_screen.dart';
 
@@ -14,13 +15,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'moovebe',
       theme: ThemeData(
         primarySwatch: Colors.red,
       ).copyWith(
         textTheme: GoogleFonts.montserratTextTheme(Theme.of(context).textTheme),
       ),
-      home: DriverListSreen(),
+      home: AddDriverScreen(),
     );
   }
 }
