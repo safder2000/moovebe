@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:moovebe/presentation/login_screen.dart';
 import 'package:moovebe/presentation/starting_screen.dart';
 
@@ -16,6 +17,8 @@ class MyApp extends StatelessWidget {
       title: 'moovebe',
       theme: ThemeData(
         primarySwatch: Colors.red,
+      ).copyWith(
+        textTheme: GoogleFonts.montserratTextTheme(Theme.of(context).textTheme),
       ),
       home: LoginPage(),
     );
