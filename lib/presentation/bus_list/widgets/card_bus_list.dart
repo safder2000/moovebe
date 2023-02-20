@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:moovebe/core/colors.dart';
 
 class BusListCard extends StatelessWidget {
   BusListCard({
