@@ -60,7 +60,7 @@ class DriverCard extends StatelessWidget {
               height: 130,
               width: 130,
               child: Image.asset(
-                'lib/img/assets/driver.png',
+                'lib/assets/img/driver.png',
                 fit: BoxFit.contain,
               ),
             ),

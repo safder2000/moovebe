@@ -14,7 +14,7 @@ class SimpleAppbar extends StatelessWidget {
       child: Center(
         child: SizedBox(
           child: Image.asset(
-            'lib/img/assets/moovbe_Logo.png',
+            'lib/assets/img/moovbe_Logo.png',
             fit: BoxFit.contain,
 
             height: 45,
