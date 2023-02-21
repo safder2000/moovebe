@@ -63,11 +63,12 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - lib/assets/moovbe_Logo.png
-    - lib/assets/Polygon_1.png
-    - lib/assets/white_bus.png
-    - lib/assets/yellow_bus.png
-    - lib/assets/driver.png
+    - lib/img/assets/moovbe_Logo.png
+    - lib/img/assets/Polygon_1.png
+    - lib/img/assets/white_bus.png
+    - lib/img/assets/yellow_bus.png
+    - lib/img/assets/driver.png
+    - lib/img/assets/seat.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

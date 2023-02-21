@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:moovebe/presentation/add_driver_screen.dart/add_driver_screen.dart';
-import 'package:moovebe/presentation/bus_list_screen/bus_list_screen.dart';
-import 'package:moovebe/presentation/driver_list_screen/driver_list_screen.dart';
+import 'package:moovebe/presentation/seat_2x2_screen/seat_2x2_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +10,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,7 +20,7 @@ class MyApp extends StatelessWidget {
       ).copyWith(
         textTheme: GoogleFonts.montserratTextTheme(Theme.of(context).textTheme),
       ),
-      home: AddDriverScreen(),
+      home: Seat2x2Screen(),
     );
   }
 }
