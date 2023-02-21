@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moovebe/core/colors.dart';
+import 'package:moovebe/presentation/seat_2x2_screen/seat_2x2_screen.dart';
 
 class BusTile extends StatelessWidget {
   const BusTile({
@@ -72,7 +73,12 @@ class BusTile extends StatelessWidget {
               height: 40,
               // width: MediaQuery.of(context).size.width * 0.9,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => Seat2x2Screen()));
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: defaultRed,
                   shape: RoundedRectangleBorder(

@@ -75,7 +75,7 @@ class DriverTile extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16),
                       child: Text(
-                        'License no: ',
+                        'License no: $license',
                         style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,

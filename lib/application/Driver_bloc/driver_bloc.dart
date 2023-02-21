@@ -29,8 +29,11 @@ class DriverBloc extends Bloc<DriverEvent, DriverState> {
         await DriverRepository.deleteDriver(driver_id: event.driverId!);
         // log(list.toString());
         List<DriverList> list = await driverRepo.fetchAllDrivers();
-        emit(DriverState(
-            driverModel: DriverModel(status: true, driverList: list)));
+        emit(
+          DriverState(
+            driverModel: DriverModel(status: true, driverList: list),
+          ),
+        );
       } catch (e) {
         print(e.toString());
       }
