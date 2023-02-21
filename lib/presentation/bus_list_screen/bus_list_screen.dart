@@ -58,7 +58,13 @@ class BusListScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      Seat2x2Screen()));
+                        },
                         child: BusListCard(
                           backgroundColor: defaultRed,
                           heading: 'Bus',
