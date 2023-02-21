@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:moovebe/application/Driver_bloc/driver_bloc.dart';
 import 'package:moovebe/application/Login_bloc/login_bloc.dart';
 
 import 'package:moovebe/core/colors.dart';
@@ -82,6 +83,8 @@ class BusListScreen extends StatelessWidget {
                       ),
                       InkWell(
                         onTap: () {
+                          BlocProvider.of<DriverBloc>(context)
+                              .add(FetchAllDrivers());
                           Navigator.push(
                               context,
                               MaterialPageRoute(

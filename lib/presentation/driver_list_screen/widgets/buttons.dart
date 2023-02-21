@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moovebe/core/colors.dart';
+import 'package:moovebe/presentation/add_driver_screen.dart/add_driver_screen.dart';
 
 class AddButton extends StatelessWidget {
   const AddButton({
@@ -12,7 +13,12 @@ class AddButton extends StatelessWidget {
       height: 50,
       width: MediaQuery.of(context).size.width * 0.9,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (BuildContext context) => AddDriverScreen()));
+        },
         child: Text(
           'Add Driver',
           style: TextStyle(fontSize: 22, color: Colors.white),

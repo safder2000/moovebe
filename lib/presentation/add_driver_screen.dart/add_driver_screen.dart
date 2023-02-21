@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:moovebe/application/add_driver_bloc.dart/add_driver_bloc.dart';
 import 'package:moovebe/core/constents.dart';
 import 'package:moovebe/presentation/add_driver_screen.dart/widgets/buttons.dart';
 
@@ -11,9 +13,10 @@ class AddDriverScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('Add Driver')),
+        title: const Center(child: Text('Add Driver')),
         backgroundColor: Colors.black,
         toolbarHeight: 100,
+        actions: [width_20],
       ),
       body: Center(
         child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
@@ -23,6 +26,8 @@ class AddDriverScreen extends StatelessWidget {
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.9,
             child: TextFormField(
+                onChanged: (value) => BlocProvider.of<AddDriverBloc>(context)
+                    .add(NameChanged(name: value)),
                 decoration: const InputDecoration(
                   fillColor: Colors.black12,
                   filled: true,
@@ -41,6 +46,8 @@ class AddDriverScreen extends StatelessWidget {
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.9,
             child: TextFormField(
+              onChanged: (value) => BlocProvider.of<AddDriverBloc>(context)
+                  .add(LicenseChanged(license: value)),
               decoration: const InputDecoration(
                 fillColor: Colors.black12,
                 filled: true,

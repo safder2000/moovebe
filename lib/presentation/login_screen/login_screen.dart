@@ -54,21 +54,21 @@ class LoginPage extends StatelessWidget {
                       SizedBox(
                         width: MediaQuery.of(context).size.width * 0.9,
                         child: TextFormField(
-                          onChanged: ((value) => context
-                              .read<LoginBloc>()
-                              .add(LoginPasswordChanged(password: value))),
-                          decoration: const InputDecoration(
-                            fillColor: Colors.black12,
-                            filled: true,
-                            border: OutlineInputBorder(
-                              // width: 0.0 produces a thin "hairline" border
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10.0)),
-                              borderSide: BorderSide.none,
+                            onChanged: ((value) => context
+                                .read<LoginBloc>()
+                                .add(LoginPasswordChanged(password: value))),
+                            decoration: const InputDecoration(
+                              fillColor: Colors.black12,
+                              filled: true,
+                              border: OutlineInputBorder(
+                                // width: 0.0 produces a thin "hairline" border
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10.0)),
+                                borderSide: BorderSide.none,
+                              ),
+                              label: Center(child: Text('Enter Password')),
                             ),
-                            label: Center(child: Text('Enter Password')),
-                          ),
-                        ),
+                            textAlign: TextAlign.center),
                       ),
                       Spacer(),
                       Padding(

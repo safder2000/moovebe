@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:moovebe/application/auth/auth_repository.dart';
+import 'package:moovebe/application/Driver_bloc/driver_bloc.dart';
+import 'package:moovebe/repo/auth_repository.dart';
 
 import 'package:moovebe/presentation/add_driver_screen.dart/add_driver_screen.dart';
 import 'package:moovebe/presentation/bus_list_screen/bus_list_screen.dart';
 import 'package:moovebe/presentation/login_screen/login_screen.dart';
 import 'package:moovebe/presentation/seat_2x2_screen/seat_2x2_screen.dart';
 import 'package:moovebe/presentation/spash_screen/splash_screen.dart';
+import 'package:moovebe/repo/driver_repo.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'application/Login_bloc/login_bloc.dart';
@@ -31,6 +33,9 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => LoginBloc(AuthRepository()),
+        ),
+        BlocProvider(
+          create: (context) => DriverBloc(DriverRepository()),
         ),
         // BlocProvider(
         //   create: (context) => SubjectBloc(),

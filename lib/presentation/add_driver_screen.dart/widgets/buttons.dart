@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:moovebe/application/add_driver_bloc.dart/add_driver_bloc.dart';
 import 'package:moovebe/core/colors.dart';
 
 class SaveButton extends StatelessWidget {
@@ -12,7 +14,9 @@ class SaveButton extends StatelessWidget {
       height: 50,
       width: MediaQuery.of(context).size.width * 0.9,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          BlocProvider.of<AddDriverBloc>(context).add(Submit());
+        },
         child: Text(
           'Save',
           style: TextStyle(fontSize: 22, color: Colors.white),
