@@ -15,7 +15,7 @@ class SaveButton extends StatelessWidget {
       width: MediaQuery.of(context).size.width * 0.9,
       child: ElevatedButton(
         onPressed: () {
-          BlocProvider.of<AddDriverBloc>(context).add(Submit());
+          BlocProvider.of<AddDriverBloc>(context).add(Submit(context: context));
         },
         child: Text(
           'Save',

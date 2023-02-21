@@ -42,7 +42,7 @@ class DriverListSreen extends StatelessWidget {
                   width_10,
                   Text(
                     '${state.driverModel.driverList!.length} Drivers found',
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontWeight: FontWeight.w600, color: Colors.black54),
                   ),
                 ],
@@ -55,7 +55,15 @@ class DriverListSreen extends StatelessWidget {
                       shrinkWrap: true,
                       itemCount: state.driverModel.driverList!.length,
                       itemBuilder: (BuildContext context, int index) {
-                        return const DriverTile();
+                        return DriverTile(
+                          license: state
+                              .driverModel.driverList![index].licenseNo
+                              .toString(),
+                          name: state.driverModel.driverList![index].name ??
+                              'No name ',
+                          id: state.driverModel.driverList![index].id
+                              .toString(),
+                        );
                       }),
                 ),
                 //TODO: button might go out of screen .. check with defferent aspect ratio 📐

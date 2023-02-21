@@ -13,4 +13,7 @@ class LicenseChanged extends AddDriverEvent {
   final String? license;
 }
 
-class Submit extends AddDriverEvent {}
+class Submit extends AddDriverEvent {
+  Submit({required this.context});
+  final BuildContext context;
+}

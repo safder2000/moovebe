@@ -1,8 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:meta/meta.dart';
-import 'package:moovebe/repo/auth_repository.dart';
+
 import 'package:moovebe/application/auth/form_submission_status.dart';
+import 'package:moovebe/repository/auth_repo.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';

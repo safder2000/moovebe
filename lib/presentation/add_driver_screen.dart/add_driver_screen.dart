@@ -46,8 +46,13 @@ class AddDriverScreen extends StatelessWidget {
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.9,
             child: TextFormField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter some text';
+                }
+              },
               onChanged: (value) => BlocProvider.of<AddDriverBloc>(context)
-                  .add(LicenseChanged(license: value)),
+                  .add(LicenseChanged(license: value.toUpperCase())),
               decoration: const InputDecoration(
                 fillColor: Colors.black12,
                 filled: true,

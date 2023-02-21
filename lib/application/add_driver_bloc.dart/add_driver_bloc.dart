@@ -1,5 +1,7 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:meta/meta.dart';
+import 'package:moovebe/repository/driver_repo.dart';
 
 part 'add_driver_event.dart';
 part 'add_driver_state.dart';
@@ -15,6 +17,10 @@ class AddDriverBloc extends Bloc<AddDriverEvent, AddDriverState> {
     on<LicenseChanged>((event, emit) {
       emit(state.copyWith(license: event.license));
     });
-    on<Submit>((event, emit) {});
+    on<Submit>((event, emit) {
+      DriverRepository.addNewDriver(
+          name: state.name, licence: state.license, context: event.context);
+      emit(AddDriverState());
+    });
   }
 }
