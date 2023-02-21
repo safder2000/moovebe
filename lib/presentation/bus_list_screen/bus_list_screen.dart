@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:moovebe/application/Driver_bloc/driver_bloc.dart';
 import 'package:moovebe/application/Login_bloc/login_bloc.dart';
+import 'package:moovebe/application/bus_bloc/bus_bloc.dart';
 
 import 'package:moovebe/core/colors.dart';
 import 'package:moovebe/core/constents.dart';
@@ -16,6 +17,7 @@ class BusListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    BlocProvider.of<BusBloc>(context).add(FetchAllBus());
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -43,16 +45,12 @@ class BusListScreen extends StatelessWidget {
                 icon: Icon(Icons.logout_outlined))
           ],
         ),
-        body: ListView(
-          shrinkWrap: true,
-          // physics: NeverScrollableScrollPhysics(),
-          // physics: ClampingScrollPhysics(),
-
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: BlocBuilder<BusBloc, BusState>(
+            builder: (context, state) {
+              return ListView(
+                // mainAxisSize: MainAxisSize.min,
                 // // physics: NeverScrollableScrollPhysics(),
                 // shrinkWrap: true,
                 children: [
@@ -106,25 +104,71 @@ class BusListScreen extends StatelessWidget {
                   Row(
                     children: [
                       width_10,
-                      const Text(
-                        '21 Buses found',
+                      Text(
+                        '${state.driverModel.busList!.length} Buses found',
                         style: TextStyle(
                             fontWeight: FontWeight.w600, color: Colors.black54),
                       ),
                     ],
                   ),
-                  height_10,
-                  ListView.builder(
-                      physics: ScrollPhysics(),
-                      shrinkWrap: true,
-                      itemCount: 10,
-                      itemBuilder: (BuildContext context, int index) {
-                        return BusTile();
-                      })
+                  Divider(
+                    thickness: 1,
+                  ),
+                  height_20,
+                  state.driverModel.busList!.isEmpty
+                      ? SizedBox(
+                          height: 200,
+                          child: Column(
+                            children: [
+                              Center(
+                                child: const Text(
+                                  "NO Buses Found",
+                                  style: TextStyle(
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black54),
+                                ),
+                              ),
+                              height_10,
+                              const Text(
+                                "would you like a demo",
+                                style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black54),
+                              ),
+                              height_20,
+                              OutlinedButton(
+                                onPressed: () {
+                                  context.read<BusBloc>().add(DemoSize());
+                                },
+                                style: ButtonStyle(
+                                  shape: MaterialStateProperty.all(
+                                      RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(30.0))),
+                                ),
+                                child: const Text(
+                                  "Demo",
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      : SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.6,
+                          child: ListView.builder(
+                              shrinkWrap: true,
+                              itemCount: state.driverModel.busList!.length,
+                              itemBuilder: (BuildContext context, int index) {
+                                return BusTile();
+                              }),
+                        )
                 ],
-              ),
-            ),
-          ],
+              );
+            },
+          ),
         ),
       ),
     );

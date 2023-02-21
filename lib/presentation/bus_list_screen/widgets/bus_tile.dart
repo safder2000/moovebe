@@ -58,7 +58,7 @@ class BusTile extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16),
                   child: Text(
-                    'Swift Scania P-jjjs',
+                    'Swift Scania P-series',
                     style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
