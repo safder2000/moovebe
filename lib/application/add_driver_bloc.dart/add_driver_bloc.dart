@@ -20,7 +20,7 @@ class AddDriverBloc extends Bloc<AddDriverEvent, AddDriverState> {
     on<Submit>((event, emit) {
       DriverRepository.addNewDriver(
           name: state.name, licence: state.license, context: event.context);
-      emit(AddDriverState());
+      emit(state);
     });
   }
 }
