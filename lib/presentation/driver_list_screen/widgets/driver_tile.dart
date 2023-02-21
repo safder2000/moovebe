@@ -34,10 +34,10 @@ class DriverTile extends StatelessWidget {
                     radius: 5,
                     backgroundColor: Colors.white10,
                     backgroundImage: AssetImage(
-                      'lib/assets/driver.png',
+                      'lib/img/assets/driver.png',
                     ),
                     // child: Image.asset(
-                    //   'lib/assets/driver.png',
+                    //   'lib/img/assets/driver.png',
                     //   fit: BoxFit.cover,
                     // ),
                   ),

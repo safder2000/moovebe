@@ -31,7 +31,7 @@ class BusTile extends StatelessWidget {
                   height: 70,
                   width: 70,
                   child: Image.asset(
-                    'lib/assets/white_bus.png',
+                    'lib/img/assets/white_bus.png',
                     fit: BoxFit.contain,
                   ),
                 ),

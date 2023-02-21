@@ -14,7 +14,7 @@ class WelcomeContainer extends StatelessWidget {
       decoration: const BoxDecoration(
         color: Colors.black,
         image: DecorationImage(
-          image: AssetImage('lib/assets/Polygon_1.png'),
+          image: AssetImage('lib/img/assets/Polygon_1.png'),
           fit: BoxFit.fill,
         ),
       ),

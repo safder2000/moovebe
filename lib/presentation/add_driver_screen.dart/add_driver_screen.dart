@@ -26,7 +26,11 @@ class AddDriverScreen extends StatelessWidget {
                 decoration: const InputDecoration(
                   fillColor: Colors.black12,
                   filled: true,
-                  border: InputBorder.none,
+                  border: OutlineInputBorder(
+                    // width: 0.0 produces a thin "hairline" border
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    borderSide: BorderSide.none,
+                  ),
                   label: Center(child: Text('Enter Name')),
                 ),
                 textAlign: TextAlign.center),
@@ -40,12 +44,11 @@ class AddDriverScreen extends StatelessWidget {
               decoration: const InputDecoration(
                 fillColor: Colors.black12,
                 filled: true,
-                border: InputBorder.none,
-                // OutlineInputBorder(
-                //   borderSide:
-                //       const BorderSide(color: Color.fromARGB(31, 254, 0, 0)),
-                //   borderRadius: BorderRadius.circular(10.0),
-                // ),
+                border: OutlineInputBorder(
+                  // width: 0.0 produces a thin "hairline" border
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  borderSide: BorderSide.none,
+                ),
                 label: Center(child: Text('Enter License Number')),
               ),
               // controller: passwordController,

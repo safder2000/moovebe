@@ -38,7 +38,7 @@ class BusListScreen extends StatelessWidget {
                           height: 130,
                           width: 130,
                           child: Image.asset(
-                            'lib/assets/yellow_bus.png',
+                            'lib/img/assets/yellow_bus.png',
                             fit: BoxFit.contain,
                           ),
                         ),
@@ -51,7 +51,7 @@ class BusListScreen extends StatelessWidget {
                           height: 130,
                           width: 130,
                           child: Image.asset(
-                            'lib/assets/driver.png',
+                            'lib/img/assets/driver.png',
                             fit: BoxFit.contain,
                           ),
                         ),

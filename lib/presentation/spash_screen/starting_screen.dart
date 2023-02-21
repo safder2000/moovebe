@@ -13,7 +13,7 @@ class StartingScreen extends StatelessWidget {
           SizedBox(),
           Center(
             child: Image.asset(
-              'lib/assets/moovbe_Logo.png',
+              'lib/img/assets/moovbe_Logo.png',
               height: 60.0,
               fit: BoxFit.cover,
             ),
