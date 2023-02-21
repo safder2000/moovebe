@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:meta/meta.dart';
 import 'package:moovebe/application/auth/auth_repository.dart';
 import 'package:moovebe/application/auth/form_submission_status.dart';
@@ -24,7 +25,9 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
         try {
           await authRepo.login(
-              password: state.password, username: state.username);
+              password: state.password,
+              username: state.username,
+              context: event.context);
           emit(state.copyWith(formStatus: SubmissionSuccess()));
         } catch (e) {
           emit(state.copyWith(
@@ -32,8 +35,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         }
       }
     });
+    on<Loginout>((event, emit) {
+      authRepo.logout(event.context);
+    });
   }
-
-  // Stream<LoginState> mapEventToState(LoginEvent event) async* {
-
 }

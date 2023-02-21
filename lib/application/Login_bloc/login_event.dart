@@ -13,4 +13,12 @@ class LoginPasswordChanged extends LoginEvent {
   final String? password;
 }
 
-class LoginSubmitted extends LoginEvent {}
+class LoginSubmitted extends LoginEvent {
+  LoginSubmitted({required this.context});
+  final BuildContext context;
+}
+
+class Loginout extends LoginEvent {
+  Loginout({required this.context});
+  final BuildContext context;
+}

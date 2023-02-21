@@ -16,6 +16,7 @@ class DriverListSreen extends StatelessWidget {
         toolbarHeight: 100,
         title: const Center(child: Text('Driver List')),
         backgroundColor: Colors.black,
+        actions: [width_20],
       ),
       // TODO: disable scroll animation from this list view 👇
       body: ListView(

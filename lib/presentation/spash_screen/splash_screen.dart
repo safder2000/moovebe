@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:moovebe/presentation/login_screen/login_screen.dart';
 
-class StartingScreen extends StatelessWidget {
-  const StartingScreen({super.key});
+class SplashScreen extends StatelessWidget {
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,12 @@ class StartingScreen extends StatelessWidget {
               height: 50,
               width: MediaQuery.of(context).size.width * 0.9,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => LoginPage()));
+                },
                 child: Text(
                   'Get Started',
                   style: TextStyle(fontSize: 22, color: Colors.redAccent),

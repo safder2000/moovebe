@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
+var width_20 = const SizedBox(
+  width: 20,
+);
 var width_10 = const SizedBox(
   width: 10,
 );
