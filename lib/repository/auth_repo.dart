@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:moovebe/core/strings.dart';
-import 'package:moovebe/models/loginModel.dart';
+import 'package:moovebe/models/login_model.dart';
 import 'package:moovebe/presentation/bus_list_screen/bus_list_screen.dart';
 import 'package:moovebe/presentation/spash_screen/splash_screen.dart';
 import 'package:moovebe/presentation/widgets/aleart_boxes.dart';

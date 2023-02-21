@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:moovebe/models/driver_Model.dart';
+import 'package:moovebe/models/driver_model.dart';
 import 'package:moovebe/repository/driver_repo.dart';
 
 part 'driver_event.dart';
@@ -16,7 +16,7 @@ class DriverBloc extends Bloc<DriverEvent, DriverState> {
     });
     on<FetchAllDrivers>((event, emit) async {
       try {
-        List<DriverList> list = await driverRepo.fetchAllDrivers();
+        List<DriverList> list = await DriverRepository.fetchAllDrivers();
         log(list.toString());
         emit(DriverState(
             driverModel: DriverModel(driverList: list, status: true)));
@@ -28,7 +28,7 @@ class DriverBloc extends Bloc<DriverEvent, DriverState> {
       try {
         await DriverRepository.deleteDriver(driver_id: event.driverId!);
         // log(list.toString());
-        List<DriverList> list = await driverRepo.fetchAllDrivers();
+        List<DriverList> list = await DriverRepository.fetchAllDrivers();
         emit(
           DriverState(
             driverModel: DriverModel(status: true, driverList: list),

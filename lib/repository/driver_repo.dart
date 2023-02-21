@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:moovebe/models/driver_Model.dart';
+import 'package:moovebe/models/driver_model.dart';
 import 'package:moovebe/presentation/driver_list_screen/driver_list_screen.dart';
 import 'package:moovebe/presentation/widgets/aleart_boxes.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -10,7 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class DriverRepository {
   static var dio = Dio();
 
-  fetchAllDrivers() async {
+  static fetchAllDrivers() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     var id = prefs.getString('urlId');
     var token = prefs.getString('token');

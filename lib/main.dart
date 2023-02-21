@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:moovebe/application/Driver_bloc/driver_bloc.dart';
 import 'package:moovebe/application/add_driver_bloc.dart/add_driver_bloc.dart';
+import 'package:moovebe/application/bus_bloc/bus_bloc.dart';
 import 'package:moovebe/repository/auth_repo.dart';
 
 import 'package:moovebe/presentation/add_driver_screen.dart/add_driver_screen.dart';
@@ -40,6 +41,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => AddDriverBloc(),
+        ),
+        BlocProvider(
+          create: (context) => BusBloc(),
         ),
         // BlocProvider(
         //   create: (context) => SubjectBloc(),

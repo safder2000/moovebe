@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moovebe/core/colors.dart';
 import 'package:moovebe/presentation/login_screen/login_screen.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -7,7 +8,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.redAccent,
+      backgroundColor: defaultRed,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -31,15 +32,15 @@ class SplashScreen extends StatelessWidget {
                       MaterialPageRoute(
                           builder: (BuildContext context) => LoginPage()));
                 },
-                child: Text(
-                  'Get Started',
-                  style: TextStyle(fontSize: 22, color: Colors.redAccent),
-                ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12), // <-- Radius
                   ),
+                ),
+                child: Text(
+                  'Get Started',
+                  style: TextStyle(fontSize: 22, color: defaultRed),
                 ),
               ),
             ),
