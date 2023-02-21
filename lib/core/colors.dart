@@ -1,3 +1,3 @@
 import 'package:flutter/material.dart';
 
-var defaultRed = Colors.redAccent;
+var defaultRed = const Color.fromARGB(255, 252, 21, 59);
